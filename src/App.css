@@ -1,0 +1,17 @@
+.ant-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ant-card-head-title {
+  font-weight: 600;
+}
+
+.ant-space-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Breadcrump */
+header .ant-breadcrumb ol {
+  align-items: center;
+}
