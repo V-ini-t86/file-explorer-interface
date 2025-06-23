@@ -4,6 +4,7 @@ import './App.css';
 import DatasetManager from './pages/DatasetManager';
 import Home from './pages/Home';
 import { antdTheme } from './theme/antdTheme';
+import Error404 from './pages/Error404';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dataset-manager/:projectTitle/:sponsorId" element={<DatasetManager />} />
+          <Route path="/*" element={<Error404 />} />
         </Routes>
       </Router>
     </ConfigProvider>
