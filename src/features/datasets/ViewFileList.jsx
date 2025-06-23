@@ -2,16 +2,16 @@ import { CloseOutlined, DownloadOutlined, FileOutlined, InboxOutlined } from '@a
 import { Button, List, Progress, Spin, Tooltip } from 'antd';
 import VirtualList from 'rc-virtual-list';
 import { useViewList } from "../../hooks";
-import { formatFileSize, getFileNameFromDatasetKey } from '../../utils/common.service';
+import { formatDate, formatFileSize, getFileNameFromDatasetKey } from '../../utils/common.service';
 
 const ViewFileList = ({ dataset }) => {
-  const { 
-    fileList, 
-    onScroll, 
-    downloadHandler, 
-    getDownloadStatus, 
-    onCancelHandler, 
-    getRefIdByKey 
+  const {
+    fileList,
+    onScroll,
+    downloadHandler,
+    getDownloadStatus,
+    onCancelHandler,
+    getRefIdByKey
   } = useViewList(dataset);
 
   if (fileList.loading) return (
@@ -52,7 +52,11 @@ const ViewFileList = ({ dataset }) => {
                   <List.Item.Meta
                     avatar={<FileOutlined className="text-xl text-gray-500" />}
                     title={title}
-                    description={formatFileSize(item.size)}
+                    description={<div> <p>
+                      File Size : <span className='text-black'>{formatFileSize(item?.size)}</span>
+                    </p>
+                      <p> Last Modified Date : <span className='text-black'>{formatDate(item?.lastModified)}</span></p>
+                    </div>}
                   />
                   <Button
                     type="text"

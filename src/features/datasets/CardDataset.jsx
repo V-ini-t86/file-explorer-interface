@@ -12,7 +12,7 @@ const CardDataset = ({ datasetDetails }) => {
 
   if (!data && !loading) {
     return (
-      <div className="w-80">
+      <div className="w-full">
         <Card className="bg-white border border-secondary-border rounded-system shadow-sm">
           <Title level={5} className="text-primary-text mb-2">No Dataset Selected</Title>
           <p className="text-sm text-secondary-text mb-3">
@@ -26,7 +26,7 @@ const CardDataset = ({ datasetDetails }) => {
 
   if (!data && loading) {
     return (
-      <div className="w-80">
+      <div className="w-full">
         <Card className="bg-white border border-secondary-border rounded-system shadow-sm" loading={true} />
       </div>
     )
@@ -50,7 +50,7 @@ const CardDataset = ({ datasetDetails }) => {
 
 
   return (
-    <div className="w-80">
+    <div className="w-full">
       <Card
         className="bg-white border border-secondary-border rounded-system shadow-sm relative"
         loading={loading}

@@ -42,7 +42,7 @@ const DatasetManager = () => {
       <Header folderName={folderName} />
 
       {/* Main Content */}
-      <div className="p-6 flex justify-between space-x-2">
+      <div className="p-6 flex flex-col lg:flex-row justify-between lg:space-x-2 space-y-4 lg:space-y-0">
         <Card className="bg-white border border-secondary-border rounded-system shadow-sm flex-1">
           {/* Tabs and Controls */}
           <div className="mb-4">
@@ -86,6 +86,7 @@ const DatasetManager = () => {
                           selectedHash={datasetDetails?.data?.hash}
                           onRowClick={fetchDatasetDetails}
                           className="border-0 mb-6"
+                          isPagination={true}
                         />
                       ) : (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
@@ -126,15 +127,19 @@ const DatasetManager = () => {
             )}
           </div>
 
+
           <DatasetPagination
             currentPage={currentPage}
             totalPages={data?.totalPages || 1}
             onPageChange={onPageChange}
           />
+
         </Card>
 
         {/* Right Panel */}
-        <CardDataset datasetDetails={datasetDetails} />
+        <div className="w-full lg:w-80">
+          <CardDataset datasetDetails={datasetDetails} />
+        </div>
       </div>
     </div>
   );

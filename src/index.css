@@ -9,39 +9,4 @@
   
   color: #000000;
   background-color: #FFFFFF;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #FFFFFF;
-}
-
-/* Custom utility classes for our design system */
-@layer utilities {
-  .gap-system {
-    gap: 16px;
-  }
-  
-  .padding-card {
-    padding: 12px;
-  }
-  
-  .padding-card-lg {
-    padding: 16px;
-  }
-  
-  .margin-outer {
-    margin: 24px;
-  }
-  
-  .rounded-system {
-    border-radius: 4px;
-  }
 }
